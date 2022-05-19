@@ -9,8 +9,8 @@ import vo.CategoryVo;
 
 public class CategoryDaoTest {
 	public static void main(String[] args) {
-		//testInsert();
-		testFindAll();
+		testInsert();
+		//testFindAll();
 	}
 	
 	public static void testInsert() {

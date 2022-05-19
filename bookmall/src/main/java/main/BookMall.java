@@ -69,11 +69,11 @@ public class BookMall {
 
 		//Order 테이블 데이터 입력
 		OrdersDao dao = new OrdersDao();
-		dao.insert("20220519-0001",1L, "부산북구", 1L);
-		dao.insert("20220519-0002", 1L, "부산진구", 2L);
-		dao.insert("20220519-0003", 2L, "서울남구", 1L);
-		dao.insert("20220519-0004", 2L, "서울남구", 3L);
-		dao.insert("20220519-0005", 2L, "부산동구", 4L);
+		dao.insert("20220519-0001",1000L, "부산북구", 1L);
+		dao.insert("20220519-0002", 1000L, "부산진구", 2L);
+		dao.insert("20220519-0003", 1000L, "서울남구", 1L);
+		dao.insert("20220519-0004", 1000L, "서울남구", 3L);
+		dao.insert("20220519-0005", 1000L, "부산동구", 4L);
 	
 		
 		//Cart 테이블 데이터 입력 
@@ -83,10 +83,10 @@ public class BookMall {
 		cartDao.insert(4L, 3L, 2L);
 		cartDao.insert(2L, 4L, 1L);
 		
-		//Orders_book 테이블 데이터 입력 
+//		//Orders_book 테이블 데이터 입력 
 		dao.insertOrderBook(1L, 1L, 1L);
 		dao.insertOrderBook(3L, 2L, 1L);
-		dao.insertOrderBook(2L, 1L, 1L);
+		dao.insertOrderBook(2L, 1L, 4L);
 		dao.insertOrderBook(1L, 1L, 2L);
 
 			
@@ -137,7 +137,7 @@ public class BookMall {
 		List<OrdersVo> list = new OrdersDao().findOrderBook();
 		int count=1;
 		for(OrdersVo vo : list) {
-			System.out.println(count + ": " + vo.getTitle()+" " +vo.getCount()+" " + vo.getAmountOfPayment());
+			System.out.println(count + ": " + vo.getTitle()+" " +vo.getCount()+" " + vo.getAmountOfPayment()*vo.getCount());
 			count++;
 		}
 	}
